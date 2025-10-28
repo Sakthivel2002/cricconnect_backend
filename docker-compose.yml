@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: mysql-cricconnect
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cricconnect
+      MYSQL_USER: user
+      MYSQL_PASSWORD: root
+      TZ: Asia/Kolkata
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+    networks:
+      - db
+    restart: unless-stopped
+
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  db_data:
