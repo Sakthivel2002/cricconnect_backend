@@ -6,15 +6,15 @@ services:
     envVars:
       - key: SPRING_DATASOURCE_URL
         fromDatabase:
-          name: cricconnect-db
+          name: cricconnect_db
           property: connectionString
       - key: SPRING_DATASOURCE_USERNAME
         fromDatabase:
-          name: cricconnect-db
+          name: cricconnect_db
           property: user
       - key: SPRING_DATASOURCE_PASSWORD
         fromDatabase:
-          name: cricconnect-db
+          name: cricconnect_db
           property: password
       - key: SPRING_JPA_HIBERNATE_DDL_AUTO
         value: update
